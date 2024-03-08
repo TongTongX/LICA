@@ -22,7 +22,7 @@ class LICACritic(nn.Module):
 
         if getattr(args, "hypernet_layers", 1) == 1:
             self.hyper_w_1 = nn.Linear(self.state_dim, self.embed_dim)
-            self.hyper_w_final = nn.Linear(self.state_dim, self.embed_dim)
+            self.hyper_w_final = nn.Linear(self.state_dim, self.hid_dim)
         elif getattr(args, "hypernet_layers", 1) == 2:
             self.hyper_w_1 = nn.Sequential(nn.Linear(self.state_dim, self.embed_dim),
                                            nn.ReLU(),
